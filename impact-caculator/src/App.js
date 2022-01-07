@@ -11,7 +11,7 @@ function App() {
 
     for(let i=0;i<10;i++){
       digits.push(
-        <div className='btn' onClick={handDigitClick}>
+        <div className='btn' onClick={handDigitClick} key={i}>
         {i}
       </div>
       )
@@ -28,7 +28,7 @@ function App() {
    if (status === 'Success') {
      setScreen(message);
    } else {
-     alert('pleae input correct data');
+     alert('please input correct data');
    }
 }
 
