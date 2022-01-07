@@ -15,20 +15,28 @@ public class ApiController {
         return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(200,message));
     }
 
-    @RequestMapping("/getResult")
-    public ResponseEntity<Integer> calculateResult(@RequestParam("input") String input){
+    @RequestMapping("/getAddResult")
+    public ResponseEntity<Integer> getAddResult(@RequestParam("firstNumber") int firstNumber ,@RequestParam("secondNumber") int secondNumber){
         try{
-            int result=0;
-            if(input.contains("+")) {
-                String[] num = input.split("\\+");
-                result = Integer.parseInt(num[0])+Integer.parseInt(num[1]);
-            }else if(input.contains("-")){
-                String[] num = input.split("\\-");
-                result = Integer.parseInt(num[0])-Integer.parseInt(num[1]);
-            }else {
-                String[] num = input.split("\\×");
-                result = Integer.parseInt(num[0])*Integer.parseInt(num[1]);
-            }
+            int result=firstNumber+secondNumber;
+            return ResponseEntity.status(HttpStatus.OK).body(result);
+        }catch (Exception e){
+            return new ResponseEntity<>(0,HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @RequestMapping("/getSubtractResult")
+    public ResponseEntity<Integer> getSubtractResult(@RequestParam("firstNumber") int firstNumber ,@RequestParam("secondNumber") int secondNumber){
+        try{
+            int result=firstNumber-secondNumber;
+            return ResponseEntity.status(HttpStatus.OK).body(result);
+        }catch (Exception e){
+            return new ResponseEntity<>(0,HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @RequestMapping("/getMultiplyResult")
+    public ResponseEntity<Integer> getMultiplyResult(@RequestParam("firstNumber") int firstNumber ,@RequestParam("secondNumber") int secondNumber){
+        try{
+            int result=firstNumber*secondNumber;
             return ResponseEntity.status(HttpStatus.OK).body(result);
         }catch (Exception e){
             return new ResponseEntity<>(0,HttpStatus.INTERNAL_SERVER_ERROR);

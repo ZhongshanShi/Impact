@@ -4,7 +4,7 @@ import ApiService from "./service/ApiService";
 
 function App() {
 
-  const [screen, setScreen] = useState("0");
+  const [screen, setScreen] = useState("");
 
   const createDigits =()=>{
     const digits=[];
@@ -23,17 +23,36 @@ function App() {
     setScreen((pre)=>pre+e.target.innerText);
 }
  const handEqualClick = async ()=>{
-    const parat = encodeURIComponent(screen)
-    const { status, message } = await ApiService.getResult(parat);
-   if (status === 'Success') {
-     setScreen(message);
-   } else {
-     alert('please input correct data');
-   }
+    if(screen.includes("+")){
+      const numbers = screen.split("+");
+        const { status, message } = await ApiService.getAddResult(parseInt(numbers[0]),parseInt(numbers[1]));
+        if (status === 'Success') {
+          setScreen(message);
+        } else {
+          alert('please input correct data');
+        }
+    }else if(screen.includes("-")){
+      const numbers = screen.split("-");
+      const { status, message } = await ApiService.getSubtractResult(parseInt(numbers[0]),parseInt(numbers[1]));
+      if (status === 'Success') {
+        setScreen(message);
+      } else {
+        alert('please input correct data');
+      }
+    }else{
+      const numbers = screen.split("×");
+      const { status, message } = await ApiService.getMultiplyResult(parseInt(numbers[0]),parseInt(numbers[1]));
+      if (status === 'Success') {
+        setScreen(message);
+      } else {
+        alert('please input correct data');
+      }
+    }
+  
 }
 
 const handleResetClick =()=>{
-    setScreen("0");
+    setScreen("");
 }
   return (
     <div className='container'>
