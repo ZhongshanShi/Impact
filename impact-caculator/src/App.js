@@ -4,7 +4,7 @@ import ApiService from "./service/ApiService";
 
 function App() {
 
-  const [screen, setScreen] = useState("");
+  const [screen, setScreen] = useState("0");
 
   const createDigits =()=>{
     const digits=[];
@@ -20,7 +20,11 @@ function App() {
   }
   
   const handDigitClick = (e) =>{
-    setScreen((pre)=>pre+e.target.innerText);
+    if(screen==="0"){
+      setScreen(e.target.innerText);
+    }else{
+      setScreen((pre)=>pre+e.target.innerText);
+    }
 }
  const handEqualClick = async ()=>{
     if(screen.includes("+")){
@@ -52,7 +56,7 @@ function App() {
 }
 
 const handleResetClick =()=>{
-    setScreen("");
+    setScreen("0");
 }
   return (
     <div className='container'>
