@@ -1,23 +1,39 @@
 import "./App.css";
 import { useState } from "react";
+import ApiService from "./service/ApiService";
 
 function App() {
 
-  const [screen, setScreen] = useState("");
+  const [screen, setScreen] = useState("0");
+
+  const createDigits =()=>{
+    const digits=[];
+
+    for(let i=0;i<10;i++){
+      digits.push(
+        <div className='btn' onClick={handDigitClick}>
+        {i}
+      </div>
+      )
+    }
+    return digits;
+  }
   
   const handDigitClick = (e) =>{
     setScreen((pre)=>pre+e.target.innerText);
 }
-const handEqualClick = ()=>{
-    // setScreen();
-
+ const handEqualClick = async ()=>{
+    const parat = encodeURIComponent(screen)
+    const { status, message } = await ApiService.getResult(parat);
+   if (status === 'Success') {
+     setScreen(message);
+   } else {
+     alert('pleae input correct data');
+   }
 }
-const handOperatorClick =(e)=>{
-    setScreen((pre)=>pre+e.target.innerText);
 
-}
 const handleResetClick =()=>{
-    setScreen("");
+    setScreen("0");
 }
   return (
     <div className='container'>
@@ -25,48 +41,19 @@ const handleResetClick =()=>{
         <div className='screen'>
           {screen}
         </div>
-        <div className='btn' onClick={handDigitClick}>
-          7
+        <div className='btn orange' onClick={handDigitClick}>
+         × 
         </div>
-        <div className='btn' onClick={handDigitClick}>
-          8
-        </div>
-        <div className='btn' onClick={handDigitClick}>
-          9
-        </div>
-        <div className='btn orange' onClick={handOperatorClick}>
-          X
-        </div>
-        <div className='btn' onClick={handDigitClick}>
-          4
-        </div>
-        <div className='btn' onClick={handDigitClick}>
-          5
-        </div>
-        <div className='btn' onClick={handDigitClick}>
-          6
-        </div>
-        <div className='btn orange' onClick={handOperatorClick}>
+        <div className='btn orange' onClick={handDigitClick}>
           +
         </div>
-        <div className='btn' onClick={handDigitClick}>
-          1
-        </div>
-        <div className='btn' onClick={handDigitClick}>
-          2
-        </div>
-        <div className='btn' onClick={handDigitClick}>
-          3
-        </div>
-        <div className='btn orange' onClick={handOperatorClick}>
+        <div className='btn orange' onClick={handDigitClick}>
           -
         </div>
-        <div className='btn zero' onClick={handDigitClick}>
-          0
-        </div>
-        <div className='btn' onClick={handEqualClick}>
+        <div className='btn orange' onClick={handEqualClick}>
           =
         </div>
+        {createDigits()}
         <div className='btn light-gray' onClick={handleResetClick}>
           AC
         </div>

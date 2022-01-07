@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-const API_URL = "http://localhost:9090/tradeshift.com/api/";
+const API_URL = "http://localhost:8080/impact.com/api/";
 
 class ApiService {
 
-    async getDescendantNodesId(givenNodeId) {
+    async getResult(givenNodeId) {
         let response = {status:'Success', message: undefined};
         try{
-            const apiResponse = await axios.get(`${API_URL}getDescendantNodesId/?givenNodeId=${givenNodeId}`);
+            const apiResponse = await axios.get(`${API_URL}getResult?input=${givenNodeId}`);
             response.message=apiResponse.data;
         } catch(error) {
             response = {status:'Failure',message: error.response.statusMessage};
@@ -15,16 +15,6 @@ class ApiService {
         return response;
     }
 
-    async changeParent(givenNodeId,targetNodeId) {
-        let response = {status:'Success', message: undefined};
-        try{
-            const apiResponse = await axios.post(`${API_URL}changeParent/?givenNodeId=${givenNodeId}&targetNodeId=${targetNodeId}`);
-            response.message=apiResponse.data;
-        } catch(error) {
-            response = {status:'Failure',message: error.response.statusMessage};
-        }
-        return response;
-    }
 }
 
-export default new NodeService()
+export default new ApiService()
