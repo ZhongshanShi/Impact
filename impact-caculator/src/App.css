@@ -41,7 +41,7 @@ body {
   grid-column: 1 / -1;
   color: white;
   text-align: right;
-  padding: 0.5rem;
+  padding: 0.1rem;
   font-size: 4rem;
   overflow: hidden;
 }
