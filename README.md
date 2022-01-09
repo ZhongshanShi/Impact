@@ -6,7 +6,9 @@ GitHub Run Instruction:
 1, git clone https://github.com/ZhongshanShi/Impact
 
 2, for UI, needs Node.js (v14.16.0), run below two commands in terminal: 
+
 npm install
+
 npm start
 
 3, for Server, needs (JDK 15, Maven 3.6.3), just run the Springboot application 
@@ -27,9 +29,12 @@ docker pull jayshidocker/docker-spring-boot:1.1.1
   docker images
 
 you should see below two images in your docker:
-REPOSITORY                        TAG       IMAGE ID       CREATED          SIZE
-jayshidocker/docker-spring-boot   1.1.1     348dd038d20d   16 minutes ago   823MB
-jayshidocker/react-impact         1.1.1     7da80c3744ec   27 minutes ago   484MB
+
+REPOSITORY                        TAG 
+      
+jayshidocker/docker-spring-boot   1.1.1   
+ 
+jayshidocker/react-impact         1.1.1     
 
 if you see both images, move to the next step.
 
