@@ -20,10 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6718680-89a4-4046-b046-359da23800aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/impact-caculator-api/src/test/java/com/example/demo/ControllerTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/impact-caculator-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/impact-caculator-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/impact-caculator-api/src/test/java/com/example/demo/ImpactCalculatorApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/impact-caculator-api/src/test/java/com/example/demo/ImpactCalculatorApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/impact-caculator-api/src/test/java/com/example/demo/ControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/impact-caculator-api/src/test/java/com/example/demo/ControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/impact-caculator/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/impact-caculator/src/App.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

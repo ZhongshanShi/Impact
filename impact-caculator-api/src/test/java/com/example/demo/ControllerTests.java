@@ -15,6 +15,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.http.ResponseEntity;
 
+
 @WebMvcTest(value = ApiController.class, excludeFilters = @ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE))
 @AutoConfigureMockMvc
 @ExtendWith(MockitoExtension.class)
@@ -48,8 +49,5 @@ public class ControllerTests {
     public void getMultiplyResultTest() {
         Assert.assertEquals(6,apiController.getMultiplyResult(2,3).getBody().intValue());
     }
-
-
-
 
 }
