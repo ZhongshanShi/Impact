@@ -20,10 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6718680-89a4-4046-b046-359da23800aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/impact-caculator-api/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/impact-caculator/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/impact-caculator/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/impact-caculator/src/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

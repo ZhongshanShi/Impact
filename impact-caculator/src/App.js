@@ -30,29 +30,26 @@ function App() {
     if(screen.includes("+")){
       const numbers = screen.split("+");
         const { status, message } = await ApiService.getAddResult(parseInt(numbers[0]),parseInt(numbers[1]));
-        if (status === 'Success') {
-          setScreen(message);
-        } else {
-          alert('please input correct data');
-        }
+        helperFun(status,message);
     }else if(screen.includes("-")){
       const numbers = screen.split("-");
       const { status, message } = await ApiService.getSubtractResult(parseInt(numbers[0]),parseInt(numbers[1]));
-      if (status === 'Success') {
-        setScreen(message);
-      } else {
-        alert('please input correct data');
-      }
+      helperFun(status,message);
     }else{
       const numbers = screen.split("×");
       const { status, message } = await ApiService.getMultiplyResult(parseInt(numbers[0]),parseInt(numbers[1]));
-      if (status === 'Success') {
-        setScreen(message);
-      } else {
-        alert('please input correct data');
-      }
+      helperFun(status,message);
     }
   
+}
+
+const helperFun = (status,message)=>{
+  if (status === 'Success') {
+    setScreen(message);
+  } else {
+    alert('please input correct data');
+  }
+
 }
 
 const handleResetClick =()=>{
