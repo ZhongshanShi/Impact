@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  backend:
+    build: ./impact-caculator-api
+    ports:
+      - "9090:9090"
+
+  frontend:
+    build: ./impact-caculator
+    ports:
+      - "3000:3000"
+
