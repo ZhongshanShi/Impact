@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6718680-89a4-4046-b046-359da23800aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/impact-caculator-api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/impact-caculator-api/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="a6718680-89a4-4046-b046-359da23800aa" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
